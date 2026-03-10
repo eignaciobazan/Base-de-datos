@@ -1,81 +1,10 @@
-/*DECLARE
-variable employees%ROWTYPE;
-BEGIN
-SELECT * INTO variable
-FROM employees
-WHERE employee_id = 100;
-DBMS_OUTPUT.PUT_LINE ('LOS DATOS DEL EMPLEADO QUE HA CONSULTADO SON:');
-DBMS_OUTPUT.PUT_LINE ('CODIGO EMPLEADO: '||variable.employee_id);
-DBMS_OUTPUT.PUT_LINE ('NOMBRE EMPLEADO: '||variable.first_name);
-DBMS_OUTPUT.PUT_LINE ('SALARIO EMPLEADO: '||variable.salary);
-END;
-/*/
+<html>
+    <head>
+        <script src="index.js"></script>
+    </head>
 
-/*
-DECLARE
-v_emp employees%ROWTYPE;
-v_dept departments%ROWTYPE;
-v_loc locations%ROWTYPE;
-BEGIN
-SELECT * INTO v_emp
-FROM employees
-WHERE first_name='Adam';
-DBMS_OUTPUT.PUT_LINE ('LOS DATOS DEL EMPLEADO QUE HA CONSULTADO SON:');
-DBMS_OUTPUT.PUT_LINE ('CODIGO EMPLEADO: '||v_emp.employee_id);
-DBMS_OUTPUT.PUT_LINE ('NOMBRE EMPLEADO: '||v_emp.first_name);
-DBMS_OUTPUT.PUT_LINE ('SALARIO EMPLEADO: '||v_emp.salary);
+    <body>
+        
+    </body>
 
-SELECT * INTO v_dept
-FROM departments
-WHERE department_id = v_emp.department_id;
-DBMS_OUTPUT.PUT_LINE ('el nom del department és : '||v_dept.department_name);
-
-SELECT * INTO v_loc
-FROM locations
-WHERE location_id = v_dept.location_id;
-DBMS_OUTPUT.PUT_LINE ('el nom de la ciutat   és : '||v_loc.city);
-
-END;
-/
-*/
-
-/*
-DECLARE
-v_emp employees%ROWTYPE;
-v_dept departments%ROWTYPE;
-v_loc locations%ROWTYPE;
-BEGIN
-SELECT * INTO v_emp
-FROM employees e
-join departments d on e.DEPARTMENT_ID=d.DEPARTMENT_ID
-join LOCATIONS l on d.LOCATION_ID=l.LOCATION_ID
-WHERE e.EMPLOYEE_ID='153';
-DBMS_OUTPUT.PUT_LINE ('LOS DATOS DEL EMPLEADO QUE HA CONSULTADO SON:');
-DBMS_OUTPUT.PUT_LINE ('CODIGO EMPLEADO: '||e.employee_id);
-DBMS_OUTPUT.PUT_LINE ('NOMBRE EMPLEADO: '||e.first_name);
-DBMS_OUTPUT.PUT_LINE ('SALARIO EMPLEADO: '||e.salary);
-
-END;
-/
-*/
-
-declare 
-v_emp_name  employees.first_name%TYPE;
-v_dept_name departments.department_name%TYPE;
-v_city      locations.CITY%TYPE;
-
-
-BEGIN
-
-SELECT e.first_name,d.department_name,l.city
-INTO v_emp_name,v_dept_name,v_city
-FROM employees e 
-join departments d on e.DEPARTMENT_ID=d.DEPARTMENT_ID
-join LOCATIONS l on d.LOCATION_ID=l.LOCATION_ID
-WHERE e.employee_id = 153;
-
-DBMS_OUTPUT.PUT_LINE ('el nom del employee   és : '||v_emp_name);
-DBMS_OUTPUT.PUT_LINE ('el nom del department és : '||v_dept_name);
-DBMS_OUTPUT.PUT_LINE ('el nom de la ciutat   és : '||v_city);
-
-END;
+</html>
